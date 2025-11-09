@@ -1,0 +1,10 @@
+node_modules
+dist
+*.js.map
+*.d.ts.map
+
+# Compiled test files (Jest runs TypeScript directly via ts-jest)
+test/**/*.js
+test/**/*.d.ts
+test/**/*.js.map
+test/**/*.d.ts.map
