@@ -29,8 +29,14 @@ jobs:
 
       - name: Update package.json version
         run: |
-          npm version ${{ steps.version.outputs.version }} --no-git-tag-version
-          echo "Updated package.json to version ${{ steps.version.outputs.version }}"
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          NEW_VERSION="${{ steps.version.outputs.version }}"
+          if [ "$CURRENT_VERSION" != "$NEW_VERSION" ]; then
+            npm version $NEW_VERSION --no-git-tag-version
+            echo "Updated package.json from $CURRENT_VERSION to $NEW_VERSION"
+          else
+            echo "Version already set to $NEW_VERSION, skipping update"
+          fi
 
       - name: Install dependencies
         run: npm ci
