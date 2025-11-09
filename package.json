@@ -26,8 +26,21 @@
     "elasticsearch",
     "kubernetes"
   ],
-  "author": "",
+  "author": "Samir Patel <https://samirpatel.me>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samirspatel/common-sense-logger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/samirspatel/common-sense-logger/issues"
+  },
+  "homepage": "https://github.com/samirspatel/common-sense-logger#readme",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "devDependencies": {
     "@types/jest": "^29.5.0",
     "@types/node": "^20.0.0",
